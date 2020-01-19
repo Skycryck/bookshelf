@@ -25,19 +25,20 @@ h1, h2, h3, h4 {
 
 article {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 800px;
     text-align: justify;
 }
 
 .logo-text {
-    font-family: Montserrat;
-    font-size: 2em;
-    color: #ECB72D;
-    text-decoration: underline #541a8b;
-    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+    width: 150px;
+    height: 50px;
     transition: 0.5s;
 }
 
@@ -115,4 +116,10 @@ article {
 
 .filter h3 {
     color: #505050;
+}
+
+.cover {
+    padding: 30px;
+    height: 175px;
+    width: 135px;
 }
