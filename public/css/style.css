@@ -1,14 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto|Roboto+Mono&display=swap');
 
+::selection {
+    background: #ECB72D; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: #ECB72D; /* Gecko Browsers */
+}
+
 body {
     font-family: Roboto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #202223;
+    color: white;
+    margin: 60px 0 0 0;
 }
 
 h1, h2, h3, h4 {
     font-family: Montserrat;
+    color:  #ECB72D;
 }
 
 article {
@@ -18,4 +30,89 @@ article {
     align-items: center;
     width: 500px;
     text-align: justify;
+}
+
+.logo-text {
+    font-family: Montserrat;
+    font-size: 2em;
+    color: #ECB72D;
+    text-decoration: underline #541a8b;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.logo-text:hover {
+    text-decoration: underline #ECB72D;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #161819;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.search-bar {
+    border: none;
+    border-bottom: solid 2px #505050;
+    background-color: #161819;
+    padding: 6px;
+    font-family: 'Roboto Mono';
+    font-size: 1.2em;
+    color: #ECB72D;
+}
+
+.search-bar::placeholder {
+    color: #505050;
+}
+
+.search-bar:focus {
+    outline: none;
+}
+
+.settings {
+    width: 40px;
+    height: 40px;
+    margin-right: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.5s;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: #1b1d1e;
+    box-shadow: 0px 4px 4px #161819;
+}
+
+.filter select {
+    border: none;
+    border-bottom: solid 2px #505050;
+    background-color: #1b1d1e;
+    color: #505050;
+    font-family: 'Roboto Mono';
+    font-size: 1.2em;
+    margin-left: 20px;
+    padding: 6px;
+    outline: none;
+    transition: 0.5s;
+}
+
+.filter select:focus {
+    outline: none;
+}
+
+.filter h3 {
+    color: #505050;
 }

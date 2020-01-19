@@ -7,7 +7,20 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
+    <style>
+        .settings {
+            background-image: url('{{ asset('img/settings.png')}}');
+        }
+        .settings:hover {
+            background-image: url('{{ asset('img/settings-hover.png')}}');
+        }
+    </style>
     <body>
+        <div class="top-bar">
+            <a href="{{ path('default') }}" class="logo-text">Bookshell</a>
+            <input type="text" placeholder="Search..." class="search-bar">
+            <a class="settings" href="{{ path('settings') }}"></a>
+        </div>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

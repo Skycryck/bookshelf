@@ -7,7 +7,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -108,11 +108,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579285405132</updated>
-      <workItem from="1579285406684" duration="1989000" />
+      <workItem from="1579285406684" duration="2587000" />
+      <workItem from="1579356322673" duration="12323000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="296" y="334" key="run.anything.popup" timestamp="1579385098318">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="296" y="334" key="run.anything.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1579385098318" />
   </component>
 </project>
