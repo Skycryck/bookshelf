@@ -1,10 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Bookshell{% endblock %}
-
-{% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css')}}">
-{% endblock %}
+{% block title %}Bookshelf{% endblock %}
 
 {% block body %}
     <div class="filter">
@@ -13,21 +9,32 @@
             <option value="date">Release date</option>
             <option value="author">Author</option>
             <option value="type">Type</option>
-            <option value="lenght">Lenght</option>
+            <option value="length">Length</option>
         </select>
     </div>
     <article>
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
-        <img class="cover" src="{{ asset('img/cover.png')}}" alt="Example book">
+        {% for b in books %}
+            <a href="{{ path('book') ~ '/' ~ b.getId() }}" class="book" id="book-{{ b.getId() }}">
+                <img src="{{ asset(b.getCover())}}" alt="Book cover">
+                <h4>{{ b.getTitle() }} ({{ b.getPublished().format('Y') }})</h4>
+                <h5>{{ b.getAuthor() }}</h5>
+            </a>
+        {% endfor %}
     </article>
+    {% if id != 0 %}
+        <div id="pin">
+            <div>
+                <img src="{{ asset(book.getCover())}}" alt="Book cover">
+                <h4>{{ book.getTitle() }} ({{ book.getPublished().format('Y') }})</h4>
+                <h5>{{ book.getAuthor() }}</h5>
+                <div>
+                    <a href="{{ book.getPath() }}">Read</a>
+                    <a href="{{ book.getPath() }}">Download</a>
+                </div>
+            </div>
+            <p>{{ book.getSummary() }}</p>
+            <a id="close" href="{{ path('default') }}">X</a>
+        </div>
+    {% endif %}
+
 {% endblock %}
