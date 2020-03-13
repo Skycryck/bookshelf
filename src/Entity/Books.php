@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,11 +22,6 @@ class Books
      * @ORM\Column(type="string", length=255)
      */
     private $title;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $author;
 
     /**
      * @ORM\Column(type="date")
@@ -56,6 +53,35 @@ class Books
      */
     private $path;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Authors", inversedBy="books")
+     */
+    private $authors;
+
+    /**
+     * Books constructor.
+     * @param $title
+     * @param $published
+     * @param $cover
+     * @param $summary
+     * @param $category
+     * @param $length
+     * @param $path
+     * @param $author
+     */
+    public function __construct($title, $author, $published, $cover, $summary, $category, $length, $path)
+    {
+        $this->title = $title;
+        $this->published = $published;
+        $this->cover = $cover;
+        $this->summary = $summary;
+        $this->category = $category;
+        $this->length = $length;
+        $this->path = $path;
+        $this->authors = new ArrayCollection();
+        $this->addAuthor($author);
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,18 +95,6 @@ class Books
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    public function getAuthor(): ?string
-    {
-        return $this->author;
-    }
-
-    public function setAuthor(string $author): self
-    {
-        $this->author = $author;
 
         return $this;
     }
@@ -153,6 +167,44 @@ class Books
     public function setPath(string $path): self
     {
         $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Authors[]
+     */
+    public function getAuthors(): Collection
+    {
+        return $this->authors;
+    }
+
+    public function toStringAuthors(): string {
+        $result = "";
+        if($this->authors != null) {
+            for($i = 0; $i < count($this->authors); ++$i) {
+                $result = $result.$this->authors[$i]->getName();
+                if(($i + 1) < count($this->authors))
+                    $result = $result.", ";
+            }
+        }
+        return $result;
+    }
+
+    public function addAuthor(Authors $author): self
+    {
+        if (!$this->authors->contains($author)) {
+            $this->authors[] = $author;
+        }
+
+        return $this;
+    }
+
+    public function removeAuthor(Authors $author): self
+    {
+        if ($this->authors->contains($author)) {
+            $this->authors->removeElement($author);
+        }
 
         return $this;
     }

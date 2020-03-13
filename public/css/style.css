@@ -2,9 +2,15 @@
 
 ::selection {
     background: #ECB72D; /* WebKit/Blink Browsers */
+    color: white;
 }
 ::-moz-selection {
     background: #ECB72D; /* Gecko Browsers */
+    color: white;
+}
+
+* {
+    transition: 0.5s;
 }
 
 body {
@@ -28,19 +34,64 @@ article {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 800px;
+    max-width: 795px;
     text-align: justify;
     margin-top: 40px;
+}
+
+select {
+    border: none;
+    border-bottom: solid 2px #505050;
+    background-color: #1b1d1e;
+    color: #505050;
+    font-family: 'Roboto Mono';
+    font-size: 1.2em;
+    margin-left: 20px;
+    padding: 6px;
+    outline: none;
+    outline: none;
+}
+
+select:focus {
+    outline: none;
+    border-bottom: solid 2px #ECB72D;
+}
+
+input {
+    border: none;
+    border-bottom: solid 2px #505050;
+    background-color: #1b1d1e;
+    padding: 6px;
+    font-family: 'Roboto Mono';
+    font-size: 1.2em;
+    color: #ECB72D;
+}
+
+input:focus {
+    border-bottom: solid 2px #ECB72D;
+    outline: none;
+}
+
+input::placeholder {
+    color: #505050;
+}
+
+hr {
+    background-color: #505050;
+    width: 100%;
+    border: none;
+    height: 2px;
+    margin-top: 20px;
+    margin-bottom: 0px;
 }
 
 .logo-text {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: 0.5s;
+    margin-left: 20px;
     width: 150px;
     height: 32px;
-    transition: 0.5s;
 }
 
 .logo-text:hover {
@@ -57,7 +108,6 @@ article {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
 }
 
 .search-bar {
@@ -68,7 +118,7 @@ article {
     font-family: 'Roboto Mono';
     font-size: 1.2em;
     color: #ECB72D;
-    transition: 0.5s;
+    width: 250px;
 }
 
 .search-bar:focus {
@@ -80,14 +130,31 @@ article {
     color: #505050;
 }
 
+#auth {
+    width: 170px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#auth * {
+    margin-right: 15px;
+}
+
 .settings {
     width: 40px;
     height: 40px;
-    margin-right: 50px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: 0.5s;
+}
+
+.logout {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .filter {
@@ -100,24 +167,6 @@ article {
     box-shadow: 0px 4px 4px #161819;
 }
 
-.filter select {
-    border: none;
-    border-bottom: solid 2px #505050;
-    background-color: #1b1d1e;
-    color: #505050;
-    font-family: 'Roboto Mono';
-    font-size: 1.2em;
-    margin-left: 20px;
-    padding: 6px;
-    outline: none;
-    transition: 0.5s;
-    outline: none;
-}
-
-.filter select:focus {
-    outline: none;
-}
-
 .filter h3 {
     color: #505050;
 }
@@ -125,8 +174,8 @@ article {
 .book {
     text-decoration: none;
     padding: 15px;
+    margin: 10px;
     box-shadow: 0px 5px 10px #161819;
-    transition: 0.5s;
 }
 
 .book:hover {
@@ -134,15 +183,12 @@ article {
     box-shadow: 0px 5px 10px #161819;
 }
 
-.book img {
-    height: 300px;
-    width: 210px;
-}
-
 .book h4 {
+    width: 210px;
+    height: 65px;
     color: #ECB72D;
     margin: 20px 0 0 5px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 
@@ -150,6 +196,62 @@ article {
     color: grey;
     margin: 5px 0 0 5px;
     font-size: 15px;
+}
+
+.setting {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    top: 30px;
+    width: 600px;
+    height: 350px;
+    background-color: #1b1d1e;
+    box-shadow: 0px 4px 4px #161819;
+    padding: 30px;
+}
+
+.setting select, .setting h1 {
+    margin: 0;
+}
+
+.setting label {
+    font-family: Roboto Mono;
+    font-size: 1.2em;
+    margin-right: 20px;
+    width:250px;
+    display: inline-block;
+}
+
+.setting a {
+    background-color: #ECB72D;
+    color: rgb(82,26,135);
+    text-decoration: none;
+    font-family: Montserrat;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.setting a:hover {
+    background-color: rgb(82,26,135);
+    color: #ECB72D;
+}
+
+#change {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.option select, .option input {
+    width: 200px;
+    padding: 6px;
+    box-sizing:border-box;
 }
 
 #pin {
@@ -161,6 +263,7 @@ article {
     background-color: #1b1d1e;
     box-shadow: 0px 4px 4px #161819;
     padding: 30px;
+    z-index: 2;
 }
 
 #close {
@@ -172,11 +275,22 @@ article {
     font-size: 25px;
     font-family: Montserrat;
     padding: 5px;
-    transition: 0.5s;
 }
 
 #close:hover {
     color: rgb(82,26,135);
+}
+
+#blur {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 120px);
+    z-index: 1;
+    background-color: rgba(255, 255, 255, .001);
+    overflow: hidden;
+    backdrop-filter: blur(3px);
 }
 
 #pin img {
@@ -198,10 +312,24 @@ article {
     margin-bottom: 15px;
 }
 
-#pin div a {
+.author-link {
+    color: grey;
+    font-size: 15px;
+    font-family: Montserrat;
+    text-decoration: none;
+}
+
+.author-link:hover {
+    color: rgb(82,26,135);
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.link {
     background-color: #ECB72D;
     color: rgb(82,26,135);
-    transition: 0.5s;
     text-decoration: none;
     font-family: Montserrat;
     font-weight: bold;
@@ -209,8 +337,33 @@ article {
     padding: 5px;
 }
 
-#pin div a:hover {
+.link:hover {
     background-color: rgb(82,26,135);
     color: #ECB72D;
-    transition: 0.5s;
+}
+
+.book {
+    width: 215px;
+    height: 408px;
+}
+
+.book img, .div-img {
+    height: 307px;
+    width: 215px;
+    z-index: 0;
+}
+
+.edit {
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 10;
+}
+
+.author-edit {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }

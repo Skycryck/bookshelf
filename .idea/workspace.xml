@@ -13,6 +13,50 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="bookshelf: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="bookshelf: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="settings: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="bookshelf: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="users: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -100,6 +144,15 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-eventmanager" />
       <path value="$PROJECT_DIR$/vendor/ocramius/package-versions" />
       <path value="$PROJECT_DIR$/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-guard" />
+      <path value="$PROJECT_DIR$/vendor/pagerfanta/pagerfanta" />
+      <path value="$PROJECT_DIR$/vendor/easycorp/easyadmin-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-core" />
     </include_path>
   </component>
   <component name="ProjectId" id="1WXA8NvKlg6Z856feJfTkgm1dPY" />
@@ -110,10 +163,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jvanhuls\Documents\symfony\bookshelf\public\books\cover" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jvanhuls\Documents\symfony\bookshelf\public\css" />
+      <recent name="C:\Users\jvanhuls\Documents\symfony\bookshelf\templates\default" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -142,7 +205,21 @@
       <workItem from="1579392998169" duration="3976000" />
       <workItem from="1579433125148" duration="5700000" />
       <workItem from="1579440479236" duration="26309000" />
-      <workItem from="1579608185664" duration="2697000" />
+      <workItem from="1579608185664" duration="10163000" />
+      <workItem from="1579676501954" duration="4000" />
+      <workItem from="1580125948030" duration="2790000" />
+      <workItem from="1580281842828" duration="5000" />
+      <workItem from="1580388321914" duration="12067000" />
+      <workItem from="1580553438565" duration="819000" />
+      <workItem from="1580562974117" duration="1881000" />
+      <workItem from="1580581652560" duration="201000" />
+      <workItem from="1580885986525" duration="692000" />
+      <workItem from="1580893931658" duration="6012000" />
+      <workItem from="1581070020827" duration="929000" />
+      <workItem from="1581180662884" duration="12113000" />
+      <workItem from="1581848743825" duration="314000" />
+      <workItem from="1582095372254" duration="11000" />
+      <workItem from="1584030266302" duration="7436000" />
     </task>
     <servers />
   </component>
@@ -150,10 +227,50 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="90" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580895780186">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="90" y="137" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1580895780186" />
     <state x="407" y="504" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579436429521">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="407" y="504" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1579436429521" />
+    <state x="445" y="420" key="#com.intellij.ide.util.MemberChooser" timestamp="1580395805310">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="445" y="420" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1580395805310" />
+    <state x="440" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580886064286">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="440" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1580886064286" />
+    <state x="370" y="451" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580395206450">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="370" y="451" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1580395206450" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1580886956628">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1580886956628" />
+    <state width="1024" height="208" key="GridCell.Tab.0.bottom" timestamp="1581070108231">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581070108231" />
+    <state width="1024" height="208" key="GridCell.Tab.0.center" timestamp="1581070108230">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581070108230" />
+    <state width="1024" height="208" key="GridCell.Tab.0.left" timestamp="1581070108230">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581070108230" />
+    <state width="1024" height="208" key="GridCell.Tab.0.right" timestamp="1581070108230">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581070108230" />
+    <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1580895389922">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1580895389922" />
     <state x="781" y="343" key="SettingsEditor" timestamp="1579608389960">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -166,5 +283,16 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1579522358420" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

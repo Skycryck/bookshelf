@@ -3,8 +3,32 @@
 {% block title %}Settings{% endblock %}
 
 {% block body %}
-    <article>
+    <article class="setting">
         <h1>Settings</h1>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+        <div class="option">
+            <label for="language">Language :</label>
+            <select name="language">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
+        </div>
+        <div class="option">
+            <label for="path">Media path :</label>
+            <input type="text" placeholder="Path" name="path" title="Default path is public/books/">
+        </div>
+        <div class="option">
+            <label for="pswd1">Change password :</label>
+            <input type="password" name="pswd1" placeholder="Password">
+            <br>
+            <label for=""></label>
+            <input style="margin-top: 10px;" type="password" name="pswd2" placeholder="Retype password">
+        </div>
+        <hr>
+        <div class="option" id="change">
+            <a href="{{ asset('books')}}">Open Folder</a>
+            <a href="">Scan Library Files</a>
+            <a href="{{ path('default') }}">Discard Changes</a>
+            <a href="">Save Changes</a>
+        </div>
     </article>
 {% endblock %}

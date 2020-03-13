@@ -3,6 +3,15 @@
 {% block title %}Bookshelf{% endblock %}
 
 {% block body %}
+    <style>
+        .edit {
+            background-image: url('{{ asset('img/edit.png')}}');
+        }
+
+        .edit:hover {
+            background-image: url('{{ asset('img/edit-hover.png')}}');
+        }
+    </style>
     <div class="filter">
         <h3>Sort by :</h3>
         <select>
@@ -14,27 +23,44 @@
     </div>
     <article>
         {% for b in books %}
-            <a href="{{ path('book') ~ '/' ~ b.getId() }}" class="book" id="book-{{ b.getId() }}">
+        <div class="book" id="book-{{ b.getId() }}">
+            <a href="{{ path('book') ~ '/' ~ b.getId() }}" class="div-img">
                 <img src="{{ asset(b.getCover())}}" alt="Book cover">
-                <h4>{{ b.getTitle() }} ({{ b.getPublished().format('Y') }})</h4>
-                <h5>{{ b.getAuthor() }}</h5>
             </a>
+            <a href="{{ path('book') ~ '/' ~ b.getId() }}" style="text-decoration: none;"><h4>{{ b.getTitle() }} ({{ b.getPublished().format('Y') }})</h4></a>
+            <div class="author-edit">
+                {% for a in b.getAuthors() %}
+                    <a class="author-link" href="{{ path('author') ~ '/' ~ a.getId()}}">{{ a.getName() }}</a>
+                {% endfor %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="#" class="edit"></a>
+                {% endif %}
+            </div>
+        </div>
         {% endfor %}
     </article>
     {% if id != 0 %}
-        <div id="pin">
-            <div>
-                <img src="{{ asset(book.getCover())}}" alt="Book cover">
-                <h4>{{ book.getTitle() }} ({{ book.getPublished().format('Y') }})</h4>
-                <h5>{{ book.getAuthor() }}</h5>
-                <div>
-                    <a href="{{ book.getPath() }}">Read</a>
-                    <a href="{{ book.getPath() }}">Download</a>
-                </div>
+    <style>
+        body {
+            overflow: hidden;
+        }
+    </style>
+    <div id="blur"></div>
+    <div id="pin">
+        <div>
+            <div class="div-img"><img src="{{ asset(book.getCover())}}" alt="Book cover"></div>
+            <h4>{{ book.getTitle() }} ({{ book.getPublished().format('Y') }})</h4>
+            {% for a in author %}
+                <a class="author-link" href="{{ path('author') ~ '/' ~ a.getId()}}">{{ a.getName() }}</a>
+            {% endfor %}
+            <div class="links">
+                <a class="link" href="{{ book.getPath() }}" target="_blank">Read</a>
+                <a class="link" href="{{ book.getPath() }}" download>Download</a>
             </div>
-            <p>{{ book.getSummary() }}</p>
-            <a id="close" href="{{ path('default') }}">X</a>
         </div>
+        <p>{{ book.getSummary() }}</p>
+        <a id="close" href="{{ path('default') }}">X</a>
+    </div>
     {% endif %}
 
 {% endblock %}

@@ -21,12 +21,23 @@
         .logo-text:hover {
             background-image: url('{{ asset('img/small-logo-hover.png')}}');
         }
+        .logout {
+            background-image: url('{{ asset('img/logout.png')}}');
+        }
+        .logout:hover {
+            background-image: url('{{ asset('img/logout-hover.png')}}');
+        }
     </style>
     <body>
         <div class="top-bar">
             <a href="{{ path('default') }}" class="logo-text"></a>
             <input type="text" placeholder="Search..." class="search-bar">
-            <a class="settings" href="{{ path('settings') }}"></a>
+            <div id="auth">
+                <a class="settings" href="{{ path('app_login') }}"></a>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a class="logout" href="{{ path('app_logout') }}"></a>
+                {% endif %}
+            </div>
         </div>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}

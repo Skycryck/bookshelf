@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bookshelf{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/author.css')}}">
+{% endblock %}
+
+{% block body %}
+    <div class="filter">
+        <h3>Sort by :</h3>
+        <select>
+            <option value="date">Release date</option>
+            <option value="author">Author</option>
+            <option value="type">Type</option>
+            <option value="length">Length</option>
+        </select>
+    </div>
+    <article>
+        {% if id != 0 %}
+            <div>
+                <h1>{{ author.getName() }}</h1>
+            </div>
+            {% for b in books %}
+                <a href="{{ path('book') ~ '/' ~ b.getId() }}" class="book" id="book-{{ b.getId() }}">
+                    <div class="div-img"><img src="{{ asset(b.getCover())}}" alt="Book cover"></div>
+                    <h4>{{ b.getTitle() }} ({{ b.getPublished().format('Y') }})</h4>
+                    <h5>{{ b.toStringAuthors() }}</h5>
+                </a>
+            {% endfor %}
+        {% else %}
+            <ul>
+            {% for a in author %}
+                <li>{{ a.getName() }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </article>
+{% endblock %}
